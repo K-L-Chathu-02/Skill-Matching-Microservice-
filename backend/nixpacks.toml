@@ -2,8 +2,7 @@
 aptPkgs = ["poppler-utils"]
 
 [phases.install]
-cmds = ["npm install"]
-
+cmds = ["npm ci --omit=dev"]
 
 [start]
 cmd = "npm start"
