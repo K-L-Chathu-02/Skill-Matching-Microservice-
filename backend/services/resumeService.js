@@ -7,7 +7,9 @@ const { GoogleGenerativeAI } = require('@google/generative-ai');
 class ResumeService {
     constructor() {
         this.googleApiKey = process.env.GOOGLE_API_KEY;
-        this.popplerPath = process.env.POPPLER_PATH;
+        //this.popplerPath = process.env.POPPLER_PATH;
+        this.popplerPath = process.env.NODE_ENV === 'production' ? null : process.env.POPPLER_PATH;
+
 
         if (!this.googleApiKey) {
             throw new Error('GOOGLE_API_KEY is required in environment variables');
@@ -55,8 +57,12 @@ class ResumeService {
                 quality: 100
             };
 
-            // Set poppler path if provided
-            if (this.popplerPath) {
+            // // Set poppler path if provided
+            // if (this.popplerPath) {
+            //     options.poppler_path = this.popplerPath;
+            // }
+            // Only set poppler path in development (Windows)
+            if (this.popplerPath && process.env.NODE_ENV !== 'production') {
                 options.poppler_path = this.popplerPath;
             }
 
