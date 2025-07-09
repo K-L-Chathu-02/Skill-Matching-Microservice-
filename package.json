@@ -2,13 +2,24 @@
   "name": "skill-matching-microservice-",
   "version": "1.0.0",
   "description": "Node Js , React , Gemini API",
-  "main": "index.js",
+  "main": "backend/server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",
-    "dev": "node server.js"
+    "start": "node backend/server.js"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@google/generative-ai": "^0.24.1",
+    "cors": "^2.8.5",
+    "dotenv": "^17.0.1",
+    "express": "^4.18.2",
+    "jimp": "^0.16.13",
+    "multer": "^2.0.1",
+    "pdf-poppler": "^0.2.1"
+  },
+  "engines": {
+    "node": "18.x"
+  }
 }
