@@ -36,7 +36,7 @@ function App() {
             formData.append('jobDescription', jobDescription);
             formData.append('analysisType', analysisType);
 
-            const response = await axios.post('https://matchyourskills.railway.app/api/resume/analyze', formData, {
+            const response = await axios.post('https://skill-matching-microservice-production.up.railway.app/api/resume/analyze', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
